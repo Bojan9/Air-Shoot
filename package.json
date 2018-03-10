@@ -1,0 +1,22 @@
+{
+  "name": "AirShoot",
+  "version": "1.0.0",
+  "description": "Airplane shooting game",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bojan9/Air-Shoot.git"
+  },
+  "author": "Bojan Spasovski, Aleksandar Kostadinovski",
+  "license": "ISC",
+  "homepage": "https://github.com/Bojan9/Air-Shoot",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {}
+}
