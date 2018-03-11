@@ -1,0 +1,14 @@
+.wrap{
+    &__mapScore{
+        width: 80px;
+        height: 30px;
+        float: left;
+        background-color: blueviolet;
+    }
+    &__mapTime{
+        width: 80px;
+        height: 30px;
+        float: right;
+        background-color: darkcyan;
+    }
+}
