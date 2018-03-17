@@ -7,7 +7,6 @@ $(function () {
 //        console.log("izleze");
 //    })
 
-
     $(".wrap").mousemove(function (event) {
         var relX = event.pageX - $(this).offset().left;
         var relY = event.pageY - $(this).offset().top;
@@ -20,7 +19,6 @@ $(function () {
 //        })
 
         document.getElementsByClassName('airplane')[0].style = "transform: translate("+relX+"px,"+relY+"px )";
-
     });
 
     $(".wrap").on("click", function(event){
@@ -30,8 +28,6 @@ $(function () {
         var element = "<div class='bullet' style='top:"+relY+"px;left:"+(relX+20)+"px'></div>";
         $(this).append(element);
     })
-
-
 
     setInterval(function(){
         var bullets =  $(".bullet");
@@ -44,24 +40,18 @@ $(function () {
                    $(bullets[i]).remove();
                }else{
                    for(var j = 0; j<blocks.length; j++){
-
-
-
-
+                       if(bullets.css("top") < (blocks.css("top") + blocks.css("height"))){
+                           if(bullets.css("left") > blocks.css("left") && bullets.css("left") < (blocks.css("left") + blocks.css("width"))){
+                               $(bullets[i]).remove();
+                               $(blocks[i]).remove();
+                           }else{}
+                       }else{}
                    }
-
-
-
-
                    $(bullets[i]).css("top", newTop)
                }
-
-
            }
 
         }
 
     },100)
-
-
 })
