@@ -12,7 +12,7 @@ $(function () {
         var relX = event.pageX - $(this).offset().left;
         var relY = event.pageY - $(this).offset().top;
         var relBoxCoords = "(" + relX + "," + relY + ")";
-        console.log(relBoxCoords);
+       // console.log(relBoxCoords);
 
 //        $(".airplane").css({
 //            "top": relY + "px",
@@ -35,13 +35,24 @@ $(function () {
 
     setInterval(function(){
         var bullets =  $(".bullet");
+        var blocks = $(".block");
         if(bullets.length){
            for(var i = 0; i<bullets.length; i++){
                var newTop = parseInt($(bullets[i]).css("top"))-10;
-               console.log(newTop);
+               //console.log(newTop);
                if(newTop<0){
                    $(bullets[i]).remove();
                }else{
+                   for(var j = 0; j<blocks.length; j++){
+
+
+
+
+                   }
+
+
+
+
                    $(bullets[i]).css("top", newTop)
                }
 
