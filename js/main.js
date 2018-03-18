@@ -42,8 +42,8 @@ $(function () {
                     for (var j = 0; j < blocks.length; j++) {
                         if (bullets.css("top") < (blocks.css("top") + blocks.css("height"))) {
                             if (bullets.css("left") > blocks.css("left") && bullets.css("left") < (blocks.css("left") + blocks.css("width"))) {
+                                $(blocks[j]).remove();
                                 $(bullets[i]).remove();
-                                $(blocks[i]).remove();
                             } else {}
                         } else {}
                     }
