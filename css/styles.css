@@ -16,3 +16,35 @@
     height: 100%;
     position: absolute;
     background-color: red; } }
+
+.wrap__logo {
+  width: 210px;
+  height: 150px;
+  float: left;
+  margin-top: 30px;
+  margin-left: 82.5px;
+  background-color: gold; }
+
+.wrap__playerName {
+  width: 300px;
+  height: 80px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 37.5px;
+  background-color: firebrick; }
+
+.wrap__scores {
+  width: 300px;
+  height: 120px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 37.5px;
+  background-color: green; }
+
+.wrap__start {
+  width: 300px;
+  height: 120px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 37.5px;
+  background-color: green; }
