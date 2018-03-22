@@ -1,6 +1,15 @@
 /*global $, document, setInterval */
 $(function () {
 
+    $('.game').hide();
+    $('.end').hide();
+    var timer = 0;
+    var score = 0;
+
+    $(".wrap__start").on("click", function(){
+        $(".game").show();
+        $(".splash").hide();
+        $(".game").css("cursor", "none");
 
     //    $(".wrap").on("mouseenter", function () {
     //        console.log("vleze");
@@ -29,7 +38,9 @@ $(function () {
         $(this).append(element);
     })
 
-    setInterval(function () {
+        var currentBlocksAmmount = $(".block").length;
+
+    var mainInterval = setInterval(function () {
         var bullets = $(".bullet");
         var blocks = $(".block");
         if (bullets.length) {
@@ -49,11 +60,34 @@ $(function () {
                         var buletLeft =$(bullets[i]).position().left;
                         if ((newTop < (blockTop + blockHeight)) && (buletLeft + buletWidth > blockLeft && buletLeft < (blockLeft + blockWidth))) {
                             $(blocks[j]).remove();
+                            var scoreElement = $(".wrap__mapScore");
+                            score++;
+                            scoreElement.text(score);
+                            if(score==currentBlocksAmmount){
+                                alert("You win!")
+                                clearInterval(mainInterval);
+                                clearInterval(timeInterval);
+                                $(".wrap").off("click");
+                                $(".bullet").remove();
+                            }
                             $(bullets[i]).remove();
                         }
                     }
                 }
             }
         }
+        var bgPositionY = (parseInt($(".wrap").css("background-position-y")));
+        $(".wrap").css("background-position-y", bgPositionY -20);
     }, 100);
+
+        var timeInterval = setInterval(function(){
+            var time = $(".wrap__mapTime");
+            timer++;
+            time.text(timer);
+        }, 1000)
+
+    })
+
+
+
 })
