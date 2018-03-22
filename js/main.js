@@ -1,3 +1,4 @@
+/*global $, document, setInterval */
 $(function () {
 
 
@@ -10,7 +11,6 @@ $(function () {
     $(".wrap").mousemove(function (event) {
         var relX = event.pageX - $(this).offset().left;
         var relY = event.pageY - $(this).offset().top;
-        var relBoxCoords = "(" + relX + "," + relY + ")";
         // console.log(relBoxCoords);
 
         //        $(".airplane").css({
@@ -39,17 +39,21 @@ $(function () {
                 if (newTop < 0) {
                     $(bullets[i]).remove();
                 } else {
+                    $(bullets[i]).css("top", newTop);
                     for (var j = 0; j < blocks.length; j++) {
-                        if (bullets.css("top") < (blocks.css("top") + blocks.css("height"))) {
-                            if (bullets.css("left") > blocks.css("left") && bullets.css("left") < (blocks.css("left") + blocks.css("width"))) {
-                                $(blocks[j]).remove();
-                                $(bullets[i]).remove();
-                            } else {}
-                        } else {}
+                        var blockTop = $(blocks[j]).position().top;
+                        var blockHeight = $(blocks[j]).height();
+                        var blockLeft = $(blocks[j]).position().left;
+                        var blockWidth = $(blocks[j]).width();
+                        var buletWidth = $(bullets[i]).width();
+                        var buletLeft =$(bullets[i]).position().left;
+                        if ((newTop < (blockTop + blockHeight)) && (buletLeft + buletWidth > blockLeft && buletLeft < (blockLeft + blockWidth))) {
+                            $(blocks[j]).remove();
+                            $(bullets[i]).remove();
+                        }
                     }
-                    $(bullets[i]).css("top", newTop)
                 }
             }
         }
-    }, 100)
+    }, 100);
 })
