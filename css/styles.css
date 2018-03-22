@@ -3,7 +3,9 @@
   height: 667px;
   background-color: midnightblue;
   background-image: url("/img/airShoot-map.png");
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative;
+  cursor: none; }
 
 @media (max-width: 620px) {
   .wrap {
@@ -29,3 +31,55 @@
   height: 30px;
   float: right;
   background-color: darkcyan; }
+
+.block {
+  width: 100px;
+  height: 10px;
+  background-image: url("/img/wall.jpg");
+  background-size: 100px 10px;
+  position: absolute; }
+
+.airplane {
+  width: 50px;
+  height: 80px;
+  background-image: url("/img/plane1.png");
+  background-size: 50px 80px;
+  position: absolute; }
+
+.bullet {
+  width: 10px;
+  height: 20px;
+  background-image: url("/img/laser-icon.png");
+  background-size: 10px 20px;
+  position: absolute; }
+.wrap__logo {
+  width: 210px;
+  height: 150px;
+  float: left;
+  margin-top: 30px;
+  margin-left: 82.5px;
+  background-color: gold; }
+
+.wrap__playerName {
+  width: 300px;
+  height: 80px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 37.5px;
+  background-color: firebrick; }
+
+.wrap__scores {
+  width: 300px;
+  height: 120px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 37.5px;
+  background-color: green; }
+
+.wrap__start {
+  width: 300px;
+  height: 120px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 37.5px;
+  background-color: green; }

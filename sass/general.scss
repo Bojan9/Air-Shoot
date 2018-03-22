@@ -4,6 +4,8 @@
     background-color: midnightblue;
     background-image: url("/img/airShoot-map.png");
     margin: 0 auto;
+    position: relative;
+    cursor: none;
 }
 
 @media (max-width:620px){
@@ -13,7 +15,6 @@
         position: absolute;
     }
 }
-
 
 @media (min-width:621px) and (max-width:1024px){
     .wrap{
