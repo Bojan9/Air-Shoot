@@ -5,30 +5,46 @@
         float: left;
         margin-top: 30px;
         margin-left: 82.5px;
-        background-color: gold;
+        background-image: url("/img/airShootLogo.jpg");
+        background-size: 210px 150px;
     }
     &__playerName{
-        width: 300px;
-        height: 80px;
+        width: 210px;
+        height: 40px;
         float: left;
         margin-top: 20px;
-        margin-left: 37.5px;
-        background-color: firebrick;
+        margin-left: 82.5px;
     }
     &__scores{
-        width: 300px;
-        height: 120px;
+        width: 260px;
+        height: 110px;
         float: left;
-        margin-top: 20px;
-        margin-left: 37.5px;
+        margin-top: 60px;
+        margin-left: 57.5px;
         background-color: green;
+        font-family: sans-serif;
+        color: skyblue;
+        text-align: center;
+        font-size: 40px;
+        border-radius: 25px;
     }
     &__start{
-        width: 300px;
-        height: 120px;
+        width: 260px;
+        height: 110px;
         float: left;
         margin-top: 20px;
-        margin-left: 37.5px;
+        margin-left: 57.5px;
         background-color: green;
+        font-family: sans-serif;
+        color: skyblue;
+        text-align: center;
+        font-size: 40px;
+        border-radius: 25px;
     }
+}
+.name{
+    width: 210px;
+    height: 40px;
+    background-color: skyblue;
+    border: none;
 }
