@@ -1,15 +1,17 @@
 /*global $, document, setInterval */
 $(function () {
 
-    $('.game').hide();
+    $('.level1').hide();
+    $('.level1End').hide();
+    $('.level2').hide();
     $('.end').hide();
     var timer = 0;
     var score = 0;
 
     $(".wrap__start").on("click", function(){
-        $(".game").show();
+        $(".level1").show();
         $(".splash").hide();
-        $(".game").css("cursor", "none");
+        $(".level1").css("cursor", "none");
 
     //    $(".wrap").on("mouseenter", function () {
     //        console.log("vleze");
@@ -69,6 +71,8 @@ $(function () {
                                 clearInterval(timeInterval);
                                 $(".wrap").off("click");
                                 $(".bullet").remove();
+                                $('.level1').hide();
+                                $('.level1End').show();
                             }
                             $(bullets[i]).remove();
                         }
