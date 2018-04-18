@@ -22,13 +22,6 @@ $(function () {
     $(".wrap").mousemove(function (event) {
         var relX = event.pageX - $(this).offset().left;
         var relY = event.pageY - $(this).offset().top;
-        // console.log(relBoxCoords);
-
-        //        $(".airplane").css({
-        //            "top": relY + "px",
-        //            "left": relX + "px",
-        //        })
-
         document.getElementsByClassName('airplane')[0].style = "transform: translate(" + relX + "px," + relY + "px )";
     });
 
@@ -73,6 +66,10 @@ $(function () {
                                 $(".bullet").remove();
                                 $('.level1').hide();
                                 $('.level1End').show();
+                                $(".startLevel2").on("click", function(){
+                                    $('.level1End').hide();
+                                    $('.level2').show();
+                                });
                             }
                             $(bullets[i]).remove();
                         }
