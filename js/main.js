@@ -1,17 +1,33 @@
 /*global $, document, setInterval */
 $(function () {
+    var levle1blocks = [1,2,3,4,5,3,2,4,6,3]
 
     $('.level1').hide();
     $('.level1End').hide();
     $('.level2').hide();
+    $('.level2End').hide();
+    $('.level3').hide();
     $('.end').hide();
     var timer = 0;
     var score = 0;
+    var level = 1;
 
-    $(".wrap__start").on("click", function(){
+    $(".wrap__start, .startLevel2").on("click", function(){
+        if(level == 1){
         $(".level1").show();
         $(".splash").hide();
-        $(".level1").css("cursor", "none");
+        }
+
+
+        if(level == 2){
+        $('.level1End').hide();
+        $('.level2').show();
+        }
+
+//        $(".startLevel2").on("click", function(){
+//
+//                                });
+        $(".level1, .level2").css("cursor", "none");
 
     //    $(".wrap").on("mouseenter", function () {
     //        console.log("vleze");
@@ -20,9 +36,10 @@ $(function () {
     //    })
 
     $(".wrap").mousemove(function (event) {
+        console.log("move");
         var relX = event.pageX - $(this).offset().left;
         var relY = event.pageY - $(this).offset().top;
-        document.getElementsByClassName('airplane')[0].style = "transform: translate(" + relX + "px," + relY + "px )";
+        document.getElementsByClassName('airplane')[level-1].style = "transform: translate(" + relX + "px," + relY + "px )";
     });
 
     $(".wrap").on("click", function (event) {
@@ -33,11 +50,11 @@ $(function () {
         $(this).append(element);
     })
 
-        var currentBlocksAmmount = $(".block").length;
+        var currentBlocksAmmount = $(".level"+ level+" .bb").length;
 
     var mainInterval = setInterval(function () {
         var bullets = $(".bullet");
-        var blocks = $(".block");
+        var blocks = $(".level"+ level+" .bb");
         if (bullets.length) {
             for (var i = 0; i < bullets.length; i++) {
                 var newTop = parseInt($(bullets[i]).css("top")) - 10;
@@ -59,17 +76,14 @@ $(function () {
                             score++;
                             scoreElement.text(score);
                             if(score==currentBlocksAmmount){
-                                alert("You win!")
+                                //alert("You win!")
                                 clearInterval(mainInterval);
                                 clearInterval(timeInterval);
-                                $(".wrap").off("click");
+                                //$(".wrap").off("click");
                                 $(".bullet").remove();
                                 $('.level1').hide();
                                 $('.level1End').show();
-                                $(".startLevel2").on("click", function(){
-                                    $('.level1End').hide();
-                                    $('.level2').show();
-                                });
+                                level++;
                             }
                             $(bullets[i]).remove();
                         }

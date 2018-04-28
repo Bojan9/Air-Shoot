@@ -1,0 +1,70 @@
+<script>
+    function brackets(niza) {
+        console.log(niza);
+        var stek = [];
+        var flag = true;
+
+        for (i = 0; i < niza.length; i++) {
+            var zagrada = niza[i];
+            if (otvorena(zagrada)) {
+                stek.push(zagrada);
+            } else {
+                var posledna = stek[stek.length - 1];
+               if(pandant(zagrada, posledna)){
+                   stek.pop();
+               }else {
+                   flag = false;
+                   break;
+               }
+            }
+        }
+
+        if(flag && stek.length == 0){
+            console.log("da");
+        }else{
+            console.log("ne");
+        }
+    }
+
+    function pandant(zagrada, posledna) {
+        if (posledna == "(") {
+            if (zagrada == ")") {
+
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if (posledna == "["){
+            if(zagrada == "]"){
+                return true;
+            } else{
+                return false;
+            }
+        }
+
+        if (posledna == "{"){
+            if(zagrada == "}"){
+                return true;
+            } else{
+                return false;
+            }
+        }
+
+    }
+
+
+
+
+
+    function otvorena(zagrada) {
+        if (zagrada == "(" || zagrada == "{" || zagrada == "[") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    brackets("(){()}[]()()");
+
+</script>
