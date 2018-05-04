@@ -12,22 +12,23 @@ $(function () {
     var score = 0;
     var level = 1;
 
-    $(".wrap__start, .startLevel2").on("click", function(){
+    $(".wrap__start, .startLevel2, .startLevel3").on("click", function(){
         if(level == 1){
         $(".level1").show();
         $(".splash").hide();
         }
-
 
         if(level == 2){
         $('.level1End').hide();
         $('.level2').show();
         }
 
-//        $(".startLevel2").on("click", function(){
-//
-//                                });
-        $(".level1, .level2").css("cursor", "none");
+        if(level == 3){
+        $('.level2End').hide();
+        $('.level3').show();
+        }
+
+        $(".level1, .level2, .level3").css("cursor", "none");
 
     //    $(".wrap").on("mouseenter", function () {
     //        console.log("vleze");
@@ -81,8 +82,18 @@ $(function () {
                                 clearInterval(timeInterval);
                                 //$(".wrap").off("click");
                                 $(".bullet").remove();
+                                if(level == 1){
                                 $('.level1').hide();
                                 $('.level1End').show();
+                                }
+                                if(level == 2){
+                                $('.level2').hide();
+                                $('.level2End').show();
+                                }
+                                if(level == 3){
+                                $('.level3').hide();
+                                $('.level3End').show();
+                                }
                                 level++;
                             }
                             $(bullets[i]).remove();
@@ -102,7 +113,6 @@ $(function () {
         }, 1000)
 
     })
-
 
 
 })
