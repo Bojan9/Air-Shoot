@@ -1,0 +1,46 @@
+<script>
+
+
+
+function palindrom(niza){
+
+    var niza2 = niza.slice();
+
+    var brojac = 0;
+    var malBrojac = 0;
+
+    if(niza.length % 2 == 0){
+        console.log("Zborot ne e palindrom");
+    }
+    else{
+        for(x = 0; x<=niza2.length; x++){
+            for(y = niza2.length; x<=y; y-- ){
+                if(niza[x] == niza2[y]){
+                    console.log("par");
+                    niza2[y]=0;
+                    niza2[x]=0;
+                    malBrojac++;
+                }
+            }
+
+            brojac+=malBrojac;
+        }
+
+        console.log(brojac);
+    }
+
+
+
+//    console.log(niza.length);
+
+}
+
+
+
+
+
+
+palindrom(["r","a","d","a","r"]);
+
+
+</script>
